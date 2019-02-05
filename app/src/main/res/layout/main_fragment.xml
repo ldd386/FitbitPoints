@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <!--suppress AndroidUnknownAttribute -->
+    <data class="ch.example.fitbitpoints.ui.MainFragmentViewBindings">
+        <import type="android.view.View" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#dddddd"
+        tools:context=".ui.MainFragment">
+
+        <ImageView android:id="@+id/profile"
+            android:layout_width="0dp"
+            android:layout_height="64dp"
+            android:layout_marginEnd="22dp"
+            app:layout_constraintWidth_percent="0.2"
+            app:layout_constraintBottom_toTopOf="@+id/points_activities"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintLeft_toRightOf="@id/general_data"
+            app:layout_constraintTop_toTopOf="parent"
+            />
+        <TextView
+            android:id="@+id/general_data"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:paddingTop="16dp"
+            android:paddingStart="32dp"
+            android:layout_marginBottom="16dp"
+            android:textSize="15sp"
+            android:textStyle="bold"
+            android:text="Loading.."
+            android:gravity="center_vertical"
+            app:layout_constraintWidth_percent="0.8"
+            app:layout_constraintBottom_toTopOf="@id/points_activities"
+            app:layout_constraintRight_toLeftOf="parent"
+            app:layout_constraintLeft_toLeftOf="@id/profile"
+            app:layout_constraintTop_toTopOf="parent"/>
+
+        <ListView
+            android:id="@+id/points_activities"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
+
+            android:background="@android:color/white"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/general_data"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
